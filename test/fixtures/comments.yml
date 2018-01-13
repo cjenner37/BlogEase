@@ -3,9 +3,11 @@
 one:
   content: MyText
   user: one
-  post: one
+  commentable_type: MyString
+  commentable_id: 1
 
 two:
   content: MyText
   user: two
-  post: two
+  commentable_type: MyString
+  commentable_id: 1

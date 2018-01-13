@@ -1,0 +1,12 @@
+<li>
+	<p>
+		<h6><%= User.find(comment.user_id).username %></h6>
+		<%= comment.content %></br>
+	</p>
+	
+	<%= render "comments/form", comment: comment %>
+
+	<ul>
+		<%= render comment.comments %>
+	</ul>
+</li>
