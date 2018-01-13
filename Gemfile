@@ -7,6 +7,7 @@ end
 
 gem 'paperclip'
 gem 'devise'
+gem 'bootstrap'
 gem 'pg', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
