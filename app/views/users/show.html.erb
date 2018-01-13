@@ -1,2 +1,10 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h2><%= User.find(params[:id]).username %>'s Every Post</h2>
+
+<% @posts.each do |post| %>
+	<h3>
+		<%= link_to post.title, post %>
+	</h3>
+	<p>
+		<%= link_to User.find(post.user_id).username, user_path(User.find(post.user_id)) %><small> • <%= time_ago_in_words(post.created_at) %> ago</small>
+		</p>
+<% end %>

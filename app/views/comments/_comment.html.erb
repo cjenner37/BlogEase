@@ -1,6 +1,6 @@
 <li class="comment">
 	<p>
-		<h6><%= link_to User.find(comment.user_id).username, users_show_path(User.find(comment.user_id)) %></h6>
+		<h6><%= link_to User.find(comment.user_id).username, user_path(User.find(comment.user_id)) %></h6>
 		<%= comment.content %></br>
 	</p>
 	<p><small>

@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'users/index'
 
-  get 'users/show'
+  resources :users, only: [:show, :index]
 
   resources :posts do 
     resources :comments
