@@ -9,13 +9,8 @@ before_action :find_commentable
   end
 
   def create
-    @comment = @commentable.comments.new(comment_params)
-
-    respond_to do |format|
-      if @comment.save
-        format.js
-      end
-    end
+    @comment = @commentable.comments.create(content: params[:comment][:content], user_id: current_user.id)
+    redirect_to post_path(params[:comment][:whichpost])
   end
 
   def edit

@@ -1,32 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'posts/index'
+  get 'users/index'
 
-  get 'posts/new'
-
-  get 'posts/create'
-
-  get 'posts/edit'
-
-  get 'posts/show'
-
-  get 'posts/update'
-
-  get 'posts/destroy'
-
-  get 'comments/index'
-
-  get 'comments/new'
-
-  get 'comments/create'
-
-  get 'comments/edit'
-
-  get 'comments/show'
-
-  get 'comments/update'
-
-  get 'comments/destroy'
+  get 'users/show'
 
   resources :posts do 
     resources :comments
@@ -42,7 +18,7 @@ Rails.application.routes.draw do
       }
 
   get 'home/index'
-
+  get '/search_users', to: 'search#index'
 
   root 'home#index'
 

@@ -11,5 +11,22 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
 //= require turbolinks
 //= require_tree .
+
+$(document).on('turbolinks:load', function () {
+	$('#searchbar').keyup(function () {
+		let searchTerm = $(this).val();
+		if (searchTerm != "") {
+			searchFor(searchTerm);
+		} else {
+			$('#search-results').empty();
+		}
+	})
+});
+
+function searchFor(searchTerm) {
+	console.log(searchTerm);
+	$.get('/search_users', {name: searchTerm})
+};

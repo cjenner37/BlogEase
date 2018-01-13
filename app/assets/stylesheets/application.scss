@@ -13,4 +13,18 @@
  *= require_tree .
  *= require_self
  */
-// @import "bootstrap";
+
+
+.body-container {
+	max-width: 800px;
+	margin: auto;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.comment {
+	border-left: 1px solid grey;
+	padding-left: 20px;
+}

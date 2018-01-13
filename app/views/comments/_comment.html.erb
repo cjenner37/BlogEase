@@ -1,10 +1,15 @@
-<li>
+<li class="comment">
 	<p>
-		<h6><%= User.find(comment.user_id).username %></h6>
+		<h6><%= link_to User.find(comment.user_id).username, users_show_path(User.find(comment.user_id)) %></h6>
 		<%= comment.content %></br>
 	</p>
-	
-	<%= render "comments/form", comment: comment %>
+	<p><small>
+		<%= time_ago_in_words(comment.created_at) %> ago
+	</small></p>
+
+	<% if user_signed_in? %>
+		<%= render "comments/form", comment: comment %>
+	<% end %>
 
 	<ul>
 		<%= render comment.comments %>
