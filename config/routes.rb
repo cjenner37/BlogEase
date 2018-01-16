@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
 
-  resources :users, only: [:show, :index]
 
   resources :posts do 
     resources :comments
@@ -15,6 +14,7 @@ Rails.application.routes.draw do
         sessions: 'users/sessions',
         registrations: 'users/registrations'
       }
+  resources :users, only: [:show, :index]
 
   get 'home/index'
   get '/search_users', to: 'search#index'
