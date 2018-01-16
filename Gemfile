@@ -9,6 +9,7 @@ gem 'paperclip'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'jquery'
+gem 'jquery-rails'
 gem 'pg', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
