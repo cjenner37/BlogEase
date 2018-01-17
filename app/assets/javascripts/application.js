@@ -24,6 +24,10 @@ $(document).on('turbolinks:load', function () {
 			$('#search-results').empty();
 		}
 	})
+
+	$('#new_user').keyup(function () {
+		$('#guest-info-box').remove();
+	})
 });
 
 function searchFor(searchTerm) {

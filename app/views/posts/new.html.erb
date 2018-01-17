@@ -1,2 +1,17 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<% if user_signed_in? %>
+	<%= form_with model: @post do |f| %>
+		<div class="form-group">
+			<%= f.label :title %>
+			<%= f.text_field :title, class: "form-control" %>	
+		</div>
+		<div class="form-group">
+			<%= f.label :content %>
+			<%= f.text_area :content, class: "form-control", rows: "5" %>	
+		</div>
+		<%= f.submit "Submit" %>
+	<% end %>
+<% else %>
+	<div class="alert alert-info">
+		You must be signed in to write a post.
+	</div>
+<% end %>

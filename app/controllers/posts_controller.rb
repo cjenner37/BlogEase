@@ -4,9 +4,16 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
   end
 
   def create
+    @post = current_user.posts.new(post_params)
+    if @post.save
+      redirect_to @post
+    else
+      flash[:notice] = "Post save was unsuccessful. Make sure both title and content have some content."
+    end
   end
 
   def edit
@@ -21,5 +28,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(:title, :content)
   end
 end

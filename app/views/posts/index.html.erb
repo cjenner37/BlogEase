@@ -1,4 +1,10 @@
-<h2>Blogease's Every Post</h2>
+<% if user_signed_in? %>
+	<%= link_to "New Post", new_post_path, class: "btn btn-primary" %>
+<% else %>
+	<p class="alert alert-secondary" >Please Sign In to make a post</p>
+<% end %>
+
+<h2>BlogEase's Every Post</h2>
 
 <% @posts.each do |post| %>
 	<h3>
